@@ -4,10 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [todo,settodo] = useState("");
-  const [noftodo,setnooftodo]=useState(1);
-  const [todotodisplay,settodotodisplay]=useState([]);
-  const [x,setx]=useState(1);
+  const [todo,settodo] = useState("")
+  const [todotodisplay,settodotodisplay]=useState([]);  
 
    useEffect(function(){
      settodotodisplay(JSON.parse(localStorage.getItem("todo")) || []) 
@@ -25,8 +23,7 @@ function App() {
 function resetme(){
   localStorage.clear();
   settodotodisplay([]);
-  setx(1);
-  setnooftodo(1);
+  
 }
 function destroy(k){
 const updatedtodo=todotodisplay.filter(function(item,i){return i!==k})
